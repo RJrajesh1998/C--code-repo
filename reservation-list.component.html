@@ -1,0 +1,37 @@
+
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">CheckIn</th>
+        <th scope="col">CheckOut</th>
+
+        <th scope="col">Price</th>
+        <th scope="col">MobileNumber</th>
+        <th scope="col">Options</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservItems of reserv">
+        <th scope="row">{{reservItems.id}}</th>
+        <td>{{reservItems.name}}</td>
+        <td>{{reservItems.address}}</td>
+        <td>{{reservItems.checkIn | date:'dd/MM/yyy'}}</td>
+        <td>{{reservItems.checkOut | date:'dd/MM/yyy'}}</td>
+        <td>{{reservItems.price}}</td>
+        <td>{{reservItems.mobileNumber}}</td>
+<td>
+  <button class="btn btn-success " type="button" (click)="onCreate()">Create</button> &nbsp;
+  <button class="btn btn-primary " type="button" [routerLink]="['/1',reservItems.id]">Edit</button>&nbsp;
+  <button class="btn btn-primary " type="button" (click)="onDelete(reservItems.id)">Delete</button>
+
+
+</td>
+      </tr>
+
+    </tbody>
+  </table>
